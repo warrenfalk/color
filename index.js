@@ -316,6 +316,16 @@ Color.prototype = {
       return this;
    },
 
+   multiply: function(bgcolor) {
+      var rgb = {
+         r: bgcolor.red() * this.red() / 255,
+         g: bgcolor.green() * this.red() / 255,
+         b: bgcolor.blue() * this.red() / 255
+      }
+
+      return this.mix(Color(rgb));
+   },
+
    toJSON: function() {
      return this.rgb();
    },
